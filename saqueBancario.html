@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>  
+</head>
+<body>
+
+    <form>
+        <p>SALDA: <input type="text" id="saldo" readonly placeholder="saida" value="5000"></p>
+        <p>SAQUE: <input type="number" id="saque"></p>
+        <button type="button" onclick="saque()">Sacar</button>
+    </form>
+
+    <script>
+        function saque(){
+            alert("Saque bem sucedido!");
+            let saque = parseFloat (document.getElementById("saque").value);
+            let saldo = parseFloat (document.getElementById("saldo").value);
+            if(saque <= saldo){
+                let operacao = parseFloat(saldo) - parseFloat(saque);
+                document.getElementById("saldo").value = operacao
+            }else{
+                alert("Saldo insuficiente!");
+            }
+        }
+    </script>
+
+</body>
+</html>
